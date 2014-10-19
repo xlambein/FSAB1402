@@ -166,25 +166,25 @@ L2=(1|2|3|nil)|(4|5|6|nil)|nil
 
 ```oz
 declare
-fun{Average L}
-   fun{AverageAcc L S N}
-      case L
-      of nil then S div N
-      [] H|T then {AverageAcc T H+S 1+N}
-      end
-   end
+fun {Average L}
+    fun {AverageAcc L S N}
+        case L
+        of nil then S div N
+        [] H|T then {AverageAcc T H+S 1+N}
+        end
+    end
 in
    {AverageAcc L 0 0}
 end
 
 declare
-fun{SquareAverage L}
-   fun{SquareAverageAcc L S N}
-      case L
-      of nil then S div N
-      [] H|T then {SquareAverageAcc T H*H+S 1+N}
-      end
-   end
+fun {SquareAverage L}
+    fun {SquareAverageAcc L S N}
+        case L
+        of nil then S div N
+        [] H|T then {SquareAverageAcc T H*H+S 1+N}
+        end
+    end
 in
    {SquareAverageAcc L 0 0}
 end
@@ -214,7 +214,7 @@ local
         [(Tmp div 2) (Tmp mod 2)]
     end
     end
-    
+
     Tmp1 Tmp2
 in
     case B1
@@ -228,39 +228,3 @@ in
 end
 end
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
